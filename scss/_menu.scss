@@ -1,0 +1,66 @@
+nav.menu {
+  background-color: $primary-color;
+  label {
+    z-index: 5;
+    position: sticky;
+    right: 35px;
+    top: 20px;
+    .btn-line {
+
+      width: 30px;
+      margin: 5px;
+      height: 5px;
+      background: white;
+      cursor: pointer;
+      @include easeOut;
+      
+    }
+  } 
+    
+  #toggler {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    
+  }
+  #toggler:checked + label > .btn-line{
+    transform: rotate(135deg);
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg) translate(9px, -9px);
+    }
+  }
+  
+  ul.menu-nav {
+    padding: 0 2em;
+    opacity: 1;
+    list-style-type: none;
+    display: flex;
+    //flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    li {
+      padding: 1em;
+      z-index: 20;
+      a {
+        text-decoration: none;
+        color: set-text-color($primary-color);
+        margin: 0.5em 0;
+        font-size: 1.5em;
+        //@include easeOut;
+        z-index: 20;
+      }
+    }
+    a:hover, a:focus, li:hover > a, .current-page > a {
+      font-size: 1.8em;
+      color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}

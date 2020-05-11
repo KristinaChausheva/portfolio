@@ -1,0 +1,25 @@
+<nav class="menu">
+  <input type="checkbox" id="toggler" />
+  <label for="toggler">
+    <div class="btn-line"></div>
+    <div class="btn-line"></div>
+    <div class="btn-line"></div>
+  </label>
+
+  <ul class="menu-nav">
+    {% assign navigation_pages = site.pages | sort:"order" %} {% for
+    current_page in navigation_pages %} {% if current_page.title %}
+
+    <li
+      class="page-title-{{ current_page.title | slugify }}{% if current_page.url == page.url %} current-page{% endif %}"
+    >
+      <a href="http://localhost:4000{{ current_page.url }}"
+        >{{ current_page.title }}</a
+      >
+    </li>
+
+    {% endif %} {% endfor %}
+  </ul>
+
+  {% if include.location == 'header' %} {% endif %}
+</nav>

@@ -1,0 +1,136 @@
+// Widescreens (min-width: 1025px) 
+@include mediaXl {
+  header{
+    label{
+      opacity: 0;
+    }
+  }
+  main{
+    .lg-heading {
+      margin-top:1em;
+    }
+    .boxes {
+      flex-direction: row;
+    }
+    .projects {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+// Desktops & Laptops (min-width: 769px) and (max-width: 1024px)
+@include mediaLg {
+  header{
+    label{
+      opacity: 0;
+    }
+  }
+  
+  main{
+    .lg-heading {
+      margin-top:1em;
+    }
+    .boxes {
+      flex-direction: row;
+    }
+    .projects {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+}
+  
+// Tablets & Small Laptops  (max-width: 768px)
+@include mediaMd {
+ 
+  .menu {
+    flex-direction: column;
+    ul {
+      //min-height: 3 * $header-height;
+      min-height: 100vh;
+      width: 100%;
+      transition: height 2s;
+      background-color: $primary-color;
+      flex-direction: column;
+      visibility: hidden;
+      opacity: 0;
+      font-size: 2em;
+    }
+    #toggler:checked ~ ul {
+      visibility: visible;
+      min-height: 100vh;
+      animation-name: ul-load;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+      transform: translateY(-500px);
+      opacity: 0;
+      @keyframes ul-load {
+          0% {
+              transform: translateY(-500px);
+              opacity: 0;
+          }
+          100% {
+              transform: translateY(-50px);
+              opacity: 1;
+          }
+      }
+    }
+
+  }  
+  main {
+    align-items: center;
+    text-align: center;
+    
+    }
+    .about-info {
+      grid-template-areas:
+        'bioimage bioimage bioimage'
+        'bio bio bio'
+        'job1 job1 job1'
+        'job2 job2 job2'
+        'job3 job3 job3';
+      }
+      grid-template-columns: 1fr;
+    }
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .boxes {
+      flex-direction: row;
+      div {
+        margin: 1em;
+      }
+      .second {
+        margin: 1em;
+      }
+    }  
+    
+// Smartphones (max-width: 500px)
+@include mediaSm {
+  .menu {
+    flex-direction: column;
+    ul {
+      //min-height: 10 * $header-height;
+      flex-direction: column;
+      font-size: 1.3em;
+    }
+    label {
+      opacity: 1;
+      position: relative;
+      top: 100px;
+      display: block;
+    }
+  }
+  main {  
+    .lg-heading {
+      margin-top:1em;
+      font-size: 2.5rem;
+    }
+    .sm-heading {
+      font-size: 1.2rem;
+    }
+    .projects {
+      grid-template-columns: 1fr;
+    } 
+  }
+}
