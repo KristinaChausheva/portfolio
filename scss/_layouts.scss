@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-image: url('../img/background1.png');
+  background-image: url('../img/background.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -141,14 +141,27 @@ h3 {
 
   .job-1 {
     grid-area: job1;
+    p {
+      margin: 1em 0;
+    }
+    a {
+      text-decoration: none;
+      color: set-text-color($primary-color);
+    }
   }
 
   .job-2 {
     grid-area: job2;
+    p {
+      margin: 1em 0;
+    }
   }
 
   .job-3 {
     grid-area: job3;
+    p {
+      margin: 1em 0;
+    }
   }
 
   .job {
